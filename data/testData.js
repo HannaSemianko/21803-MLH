@@ -1,5 +1,6 @@
 const name = {
-    "default": "LadyBug007"
+    "default": "LadyBug007",
+    "anyLetters": "ABCabc"
 }
 
 const gender = {
