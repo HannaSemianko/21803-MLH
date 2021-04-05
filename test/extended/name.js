@@ -1,7 +1,7 @@
 import sel from '../../data/selectors';
 import {name, gender, age, story} from '../../data/testData';
 
-describe('Required fields and story created', function () {
+describe('Name field suite', function () {
 
     describe('Positive cases', function () {
 
@@ -11,6 +11,12 @@ describe('Required fields and story created', function () {
 
         beforeEach(function () {
             browser.refresh();
+        });
+
+        it('TC-032 Name field accepts Lower case/ Upper case', function () {
+            $(sel.name).setValue(name.anyLetters);
+            const value = $(sel.errorRequired).isDisplayed();
+            expect(value).toEqual(false);
         });
 
         it('TC-033 Name field accepts digits "123456789"', function () {
