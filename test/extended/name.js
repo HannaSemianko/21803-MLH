@@ -13,7 +13,7 @@ describe('Name field suite', function () {
             browser.refresh();
         });
 
-        it.only('TC-032 Name field accepts Lower case/ Upper case', function () {
+        it('TC-032 Name field accepts Lower case/ Upper case', function () {
             $(sel.name).setValue(name.anyLetters);
             const value = $(sel.errorRequired).isDisplayed();
             expect(value).toEqual(false);
