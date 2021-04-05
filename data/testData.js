@@ -1,5 +1,6 @@
 const name = {
     "default": "LadyBug007",
+    "digits": "1234567890",
     "anyLetters": "ABCabc"
 }
 
