@@ -19,6 +19,13 @@ describe('Name field suite', function () {
          expect(placeholder).toEqual(exp.namePlaceholder);
         });
 
+        it('TC-029 Name field  accept "a" (one symbol) ', () => {
+            $(sel.name).setValue(name.oneSymbol);
+            const value = $(sel.errorRequired).isDisplayed();
+            expect(value).toEqual(false);
+
+        });
+
         it('TC-031 Name field accepts letters', function () {
             $(sel.name).setValue(name.letters);
             const value = $(sel.errorRequired).isDisplayed();
