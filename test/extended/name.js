@@ -1,8 +1,9 @@
 import sel from '../../data/selectors';
 import {name, gender, age, story} from '../../data/testData';
 import exp from '../../data/expected.json';
+import {clearBackspace}  from '../../helpers/methods';
 
-describe('Name field suite', function () {
+ describe('Name field suite', function () {
 
     describe('Positive cases', function () {
 
@@ -42,6 +43,26 @@ describe('Name field suite', function () {
             $(sel.name).setValue(name.digits);
             const s = $(sel.errorRequired).isDisplayed();
             expect(s).toEqual(false);
+        });
+    });
+
+    describe('Negative  cases', function () {
+
+        before('Open App', function () {
+            browser.url('');
+        });
+
+        beforeEach(function () {
+            browser.refresh();
+        });
+
+        it('TC-038 when enter symbol in input field and delete, input field is empty, error appears', function () {
+            $(sel.name).setValue(name.oneSymbol);
+            const value = (name.oneSymbol).length;
+            clearBackspace(value);
+            let messageError = $(sel.errorRequired).waitForDisplayed({timeout:3000});
+            expect(messageError).toEqual(true);
+
         });
     });
 });
