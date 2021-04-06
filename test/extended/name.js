@@ -1,5 +1,6 @@
 import sel from '../../data/selectors';
 import {name, gender, age, story} from '../../data/testData';
+import exp from '../../data/expected.json';
 
 describe('Name field suite', function () {
 
@@ -11,6 +12,11 @@ describe('Name field suite', function () {
 
         beforeEach(function () {
             browser.refresh();
+        });
+
+        it('TC-028 placeholder = "Hero\'s name"', function () {
+         const placeholder =  $(sel.name).getAttribute('placeholder');
+         expect(placeholder).toEqual(exp.namePlaceholder);
         });
 
         it('TC-031 Name field accepts letters', function () {
