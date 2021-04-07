@@ -5,7 +5,8 @@ const name = {
     "letters":"zaqwsxcderfvbgtyhnmjukilop",
     "oneSymbol": "a",
     "nameWithSpaces": 'abc abc"/ "  abc abc"/ "abc abc  ',
-    "maxSymbol": "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
+    "maxSymbol": "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
+    "specialSymbol": "1(){}[]|`¬¦! \"£$%^&*\"<>:;#~_-+=,@",
 }
 
 const gender = {
