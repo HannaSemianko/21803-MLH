@@ -82,6 +82,13 @@ import {clearBackspace}  from '../../helpers/methods';
             expect(messageError).toEqual(true);
 
         });
+
+        it('TC-042 Name field accepts 71 symbols', function () {
+            $(sel.name).setValue(name.moreMaxSymbol);
+            let messageError = $(sel.errorRequired).waitForDisplayed({timeout:3000});
+            expect(messageError).toEqual(true);
+        });
+
     });
 });
 
