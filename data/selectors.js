@@ -6,6 +6,7 @@ const elements = {
     "radioButtons": ".ant-radio",
     "btnShe": "input[type='radio'][class='ant-radio-input'][value='she']",
     "btnIt": "input[type='radio'][class='ant-radio-input'][value='it']",
+    "btnHe": "input[type='radio'][class='ant-radio-input'][value='he']",
     "radioButtonsLabel": ".ant-radio-wrapper",
     "age": "#age",
     "storyType": ".ant-select-selector",
