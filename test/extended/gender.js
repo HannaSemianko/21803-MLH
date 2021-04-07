@@ -13,9 +13,15 @@ describe('Gender field suite', function () {
             browser.refresh();
         });
 
+        it('TC-044 Button "she" is enabled', function () {
+            $$(sel.radioButtons)[gender.she].click();
+            let result = $(sel.btnShe).isSelected();
+            expect(result).toEqual(true);
+        });
+
         it('TC-047 User can choose only one button at the time: "she"', function () {
             $$(sel.radioButtons)[gender.she].click();
-            let result = $$(sel.radioButtons)[gender.he].isSelected() && $$(sel.radioButtons)[gender.it].isSelected();
+            let result = $$(sel.radioButtons)[gender.he].isSelected() && $$(sel.radioButtons)[gender.it].isEnabled();
             expect(result).toEqual(false);
         });
     });
