@@ -25,7 +25,7 @@ describe('Gender field suite', function () {
             expect(result).toEqual(true);
         });
 
-        it.only('TC-046 Button "he" is enabled', function () {
+        it('TC-046 Button "he" is enabled', function () {
             $$(sel.radioButtons)[gender.he].click();
             let result = $(sel.btnHe).isSelected();
             expect(result).toEqual(true);
