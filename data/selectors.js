@@ -16,6 +16,7 @@ const elements = {
     "submitButton": ".ant-btn",
     "tryAgainButton": ".btn-primary",
     "errorRequired": '//div[contains(@class, "ant-form-item-control")][. //input[@id="name"]]//div[@role="alert"]'
+
 }
 
 module.exports = elements;

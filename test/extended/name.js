@@ -95,6 +95,15 @@ import {clearBackspace}  from '../../helpers/methods';
             expect(messageError).toEqual(true);
         });
 
+        it ('TC-055 No button selected', function () {
+            $(sel.name).setValue(name.default);
+            $(sel.age).setValue(age.default);
+            $(sel.storyType).click();
+            $$(sel.storyList)[story.comedy].click();
+            let submitButtonDisabled = $(sel.submitButton).isEnabled();
+            expect(submitButtonDisabled).toEqual(false);
+        });
+
     });
 });
 
