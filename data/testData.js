@@ -3,8 +3,8 @@ const name = {
     "digits": "1234567890",
     "anyLetters": "ABCabc",
     "letters":"zaqwsxcderfvbgtyhnmjukilop",
-    "oneSymbol": "a"
-
+    "oneSymbol": "a",
+    "nameWithSpaces": 'abc abc"/ "  abc abc"/ "abc abc  '
 }
 
 const gender = {

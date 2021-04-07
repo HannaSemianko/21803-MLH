@@ -44,6 +44,12 @@ import {clearBackspace}  from '../../helpers/methods';
             const s = $(sel.errorRequired).isDisplayed();
             expect(s).toEqual(false);
         });
+
+        it('TC-035 Name field accepts spaces between letters/ words', () => {
+            $(sel.name).setValue(name.nameWithSpaces);
+            const expected = $(sel.errorRequired).isDisplayed();
+            expect(expected).toEqual(false);
+        });
     });
 
     describe('Negative  cases', function () {
