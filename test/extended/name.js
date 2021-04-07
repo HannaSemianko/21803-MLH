@@ -62,6 +62,12 @@ import {clearBackspace}  from '../../helpers/methods';
             const expected = $(sel.errorRequired).isDisplayed();
             expect(expected).toEqual(false);
         });
+
+        it('TC-036 Name field accepts Cyrillic characters', () => {
+            $(sel.name).setValue(name.cyrillicSymbols);
+            const expected = $(sel.errorRequired).isDisplayed();
+            expect(expected).toEqual(false);
+        });
     });
 
     describe('Negative  cases', function () {
