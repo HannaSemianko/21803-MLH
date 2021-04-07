@@ -27,6 +27,12 @@ import {clearBackspace}  from '../../helpers/methods';
 
         });
 
+        it('TC-030 Name field accepts 70 letters', function () {
+            $(sel.name).setValue(name.maxSymbol);
+            const value = $(sel.errorRequired).isDisplayed();
+            expect(value).toEqual(false);
+        });
+
         it('TC-031 Name field accepts letters', function () {
             $(sel.name).setValue(name.letters);
             const value = $(sel.errorRequired).isDisplayed();
