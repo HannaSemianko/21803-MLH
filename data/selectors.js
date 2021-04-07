@@ -4,6 +4,7 @@ const elements = {
     "requiredLabel": ".ant-form-item-required",
     "name": "#name",
     "radioButtons": ".ant-radio",
+    "btnIt": "input[type='radio'][class='ant-radio-input'][value='it']",
     "radioButtonsLabel": ".ant-radio-wrapper",
     "age": "#age",
     "storyType": ".ant-select-selector",
