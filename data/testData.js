@@ -6,6 +6,7 @@ const name = {
     "oneSymbol": "a",
     "nameWithSpaces": 'abc abc"/ "  abc abc"/ "abc abc  ',
     "maxSymbol": "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
+    "moreMaxSymbol": "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwq",
     "specialSymbol": "1(){}[]|`¬¦! \"£$%^&*\"<>:;#~_-+=,@",
 }
 
