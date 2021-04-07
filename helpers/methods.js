@@ -9,4 +9,10 @@ function inputValues4 (name, gender, age, story){
     $$(sel.storyList)[story].click();
 }
 
-module.exports = inputValues4;
+function clearBackspace (value){
+    for (let i = 0; i < value; i++) {
+        $(sel.name).keys(['Backspace']);
+    }
+}
+
+module.exports = {inputValues4, clearBackspace};
