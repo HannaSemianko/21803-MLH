@@ -25,7 +25,7 @@ const age = {
 
 const story = {
     "overcomingTheMonster": 0,
-    " rebirth": 1,
+    "rebirth": 1,
     "quest": 2,
     "journeyAndReturn": 3,
     "ragsAndRiches": 4,
