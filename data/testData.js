@@ -20,6 +20,7 @@ const gender = {
 const age = {
     "default": "1234567890",
     "numberWith0": "05",
+    "digits12": "999999999999",
     "digits13": "1234567890123",
     "one": "1",
     "two": "2",
