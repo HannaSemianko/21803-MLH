@@ -31,11 +31,26 @@ import exp from "../../data/expected.json";
         //     expect(result).toEqual(exp.numberWithout0);
         // });
 
+        it('TC-061 Age input field does not accept space', function () {
+            $(sel.age).setValue(age.space);
+            let res = $(sel.age).getValue();
+            let ageError = $(sel.ageFieldErrorMessage);
+            ageError.waitForDisplayed({ timeout: 3000 });
+            let textageError = $(sel.ageFieldErrorMessage).getText()
+            expect(textageError).toEqual(age.errorText);
+        });
+
+        it('TC-062 If click spin up  in Age input field "1" appears', function () {
+            $(sel.age).click();
+            $(sel.spinUPButton).click();
+            let result = $(sel.age).getValue();
+            expect(result).toEqual(age.one);
+        });
+
         it('TC-063 If click 1 in Age input field 2  appears', function () {
             $(sel.age).setValue(age.one);
             $(sel.spinUPButton).click();
             let result = $(sel.age).getValue();
-            browser.pause(5000);
             expect(result).toEqual(age.two);
 
         });
