@@ -25,11 +25,28 @@ describe('Age field suite', function () {
             expect(result).toEqual(exp.digitsFrom0To9);
         });
 
-        it.only('TC-060 Age input field trimmed "0" on the left of the number', function () {
-            $(sel.age).setValue(age.numberWith0);
-            let result = $(sel.age).getValue();
-            expect(result).toEqual(exp.numberWithout0);
-        });
+        // it('TC-060 Age input field trimmed "0" on the left of the number', function () {
+        //     $(sel.age).setValue(age.numberWith0);
+        //     let result = $(sel.age).getValue();
+        //     expect(result).toEqual(exp.numberWithout0);
+        // });
 
     });
+
+    describe('Negative cases', function (){
+
+        before('Open App', function () {
+            browser.url('');
+        });
+
+        beforeEach(function () {
+            browser.refresh();
+        });
+
+        it('TC-066 When enter  \'13\' digits  error appears', function () {
+            $(sel.age).setValue(age.digits13);
+            let result = $(sel.ageFieldErrorMessage).waitForDisplayed({timeout:3000});
+            expect(result).toEqual(true);
+        });
+    })
 });

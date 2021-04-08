@@ -15,7 +15,8 @@ const elements = {
     "image": "span.ant-upload",
     "submitButton": ".ant-btn",
     "tryAgainButton": ".btn-primary",
-    "errorRequired": '//div[contains(@class, "ant-form-item-control")][. //input[@id="name"]]//div[@role="alert"]'
+    "errorRequired": '//div[contains(@class, "ant-form-item-control")][. //input[@id="name"]]//div[@role="alert"]',
+    "ageFieldErrorMessage": "//div[contains(@class, \"ant-form-item-with-help\")][.//input[@id=\"age\"]]//div[@role=\"alert\"]"
 
 }
 
