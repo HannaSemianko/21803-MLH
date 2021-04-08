@@ -19,6 +19,14 @@ describe('Story field suite', function () {
             expect(placeholder).toEqual(exp.storyPlaceholder);
         });
 
+        it.only('TC-075 The first type of story is Overcoming the Monster', function () {
+            $(sel.storyType).click();
+            $$(sel.storyList)[story.overcomingTheMonster].click();
+            let result = $(sel.storyType).getText();
+            expect(result).toEqual('Overcoming the Monster');
+        });
+
+
         it('TC-076 The second type of story is Rebirth', function () {
             $(sel.storyType).click();
             $$(sel.storyList)[story.rebirth].click();
