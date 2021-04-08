@@ -13,6 +13,7 @@
   "sumbitLabel": "Create!",
   "namePlaceholder": "Hero's name",
   "AgePlaceholder": "Hero's age",
+  "storyPlaceholder": "Type of the story",
   "digitsFrom0To9": "1234567890",
   "numberWithout0": "5"
 }

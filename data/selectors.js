@@ -11,6 +11,7 @@ const elements = {
     "age": "#age",
     "storyType": ".ant-select-selector",
     "storyList": ".ant-select-item-option-content",
+    "placeholderStory": ".ant-select-selection-placeholder",
     "imageLabel": ".ant-form-item-label",
     "image": "span.ant-upload",
     "submitButton": ".ant-btn",
