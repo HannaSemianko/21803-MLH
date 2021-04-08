@@ -19,17 +19,17 @@ import exp from "../../data/expected.json";
             expect(placeholder).toEqual(exp.AgePlaceholder);
         });
 
-        // it('TC-057 Age Input Field accepts "1"', function () {
-        //     $(sel.age).setValue(age.default);
-        //     let result = $(sel.age).getValue();
-        //     expect(result).toEqual(exp.digitsFrom0To9);
-        // });
-        //
-        // it('TC-058 Age input field  accepts "999999999999"', function () {
-        //     $(sel.age).setValue(age.one);
-        //     const message = $(sel.errorRequired).isDisplayed();
-        //     expect(message).toEqual(false);
-        // });
+        it('TC-057 Age Input Field accepts "1"', function () {
+            $(sel.age).setValue(age.one);
+            const message = $(sel.ageFieldErrorMessage).isDisplayed();
+            expect(message).toEqual(false);
+        });
+
+        it('TC-058 Age input field  accepts 12 digits "999999999999"', function () {
+            $(sel.age).setValue(age.digits12);
+            const message = $(sel.ageFieldErrorMessage).isDisplayed();
+            expect(message).toEqual(false);
+        });
 
         it('TC-059 Age input field accepts "1234567890"', function () {
             $(sel.age).setValue(age.default);
