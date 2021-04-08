@@ -44,8 +44,8 @@ describe('Gender field suite', function () {
         });
 
         it('TC-048 User can choose only one button at the time: "it"', function () {
-            $$(sel.radioButtons)[gender.she].click();
-            let result = $$(sel.radioButtons)[gender.it].isSelected() && $$(sel.radioButtons)[gender.he].isSelected();
+            $$(sel.radioButtons)[gender.it].click();
+            let result = $$(sel.radioButtons)[gender.she].isSelected() && $$(sel.radioButtons)[gender.he].isSelected();
             expect(result).toEqual(false);
         });
 
