@@ -24,7 +24,9 @@ const age = {
     "digits13": "1234567890123",
     "one": "1",
     "two": "2",
-    "symbol": "@"
+    "symbol": "@",
+    "space": "    ",
+    "errorText": "Required"
 }
 
 const story = {
