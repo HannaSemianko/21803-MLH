@@ -12,5 +12,7 @@
   "imageLabel": "5. Upload an image (optional)",
   "sumbitLabel": "Create!",
   "namePlaceholder": "Hero's name",
-  "AgePlaceholder": "Hero's age"
+  "AgePlaceholder": "Hero's age",
+  "digitsFrom0To9": "1234567890",
+  "numberWithout0": "5"
 }
