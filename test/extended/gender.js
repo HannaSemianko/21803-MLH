@@ -13,6 +13,12 @@ describe('Gender field suite', function () {
             browser.refresh();
         });
 
+        it('TC-043 Button "he" is enabled', function () {
+            $$(sel.radioButtons)[gender.he].click();
+            let result = $(sel.btnHe).isSelected();
+            expect(result).toEqual(true);
+        });
+
         it('TC-044 Button "she" is enabled', function () {
             $$(sel.radioButtons)[gender.she].click();
             let result = $(sel.btnShe).isSelected();
@@ -25,10 +31,10 @@ describe('Gender field suite', function () {
             expect(result).toEqual(true);
         });
 
-        it('TC-046 Button "he" is enabled', function () {
+        it('TC-046 User can choose only one button at the time: "he"', function () {
             $$(sel.radioButtons)[gender.he].click();
-            let result = $(sel.btnHe).isSelected();
-            expect(result).toEqual(true);
+            let result = $$(sel.radioButtons)[gender.she].isSelected() && $$(sel.radioButtons)[gender.it].isSelected();
+            expect(result).toEqual(false);
         });
 
         it('TC-047 User can choose only one button at the time: "she"', function () {
