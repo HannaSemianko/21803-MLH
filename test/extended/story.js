@@ -19,7 +19,7 @@ describe('Story field suite', function () {
             expect(placeholder).toEqual(exp.storyPlaceholder);
         });
 
-        it.only('TC-075 The first type of story is Overcoming the Monster', function () {
+        it('TC-075 The first type of story is Overcoming the Monster', function () {
             $(sel.storyType).click();
             $$(sel.storyList)[story.overcomingTheMonster].click();
             let result = $(sel.storyType).getText();
