@@ -71,6 +71,13 @@ describe('Gender field suite', function () {
             expect(result).toEqual(true);
         });
 
+        it('TC-053 User can switch the option: "it" -> "he"', function () {
+            $$(sel.radioButtons)[gender.it].click();
+            $$(sel.radioButtons)[gender.he].click();
+            let result = $(sel.btnHe).isSelected();
+            expect(result).toEqual(true);
+        });
+
         describe('Negative cases', function () {
 
             before('Open App', function () {
