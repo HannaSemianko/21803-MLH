@@ -37,6 +37,27 @@ describe('Gender field suite', function () {
             expect(result).toEqual(false);
         });
 
+        it('TC-049 User can switch the option: "he" -> "she"', function () {
+            $$(sel.radioButtons)[gender.he].click();
+            $$(sel.radioButtons)[gender.she].click();
+            let result = $(sel.btnShe).isSelected();
+            expect(result).toEqual(true);
+        });
+
+        it('TC-050 User can switch the option: "he" -> "it"', function () {
+            $$(sel.radioButtons)[gender.he].click();
+            $$(sel.radioButtons)[gender.it].click();
+            let result = $(sel.btnIt).isSelected();
+            expect(result).toEqual(true);
+        });
+
+        it('TC-051 User can switch the option: "he" -> "she"', function () {
+            $$(sel.radioButtons)[gender.she].click();
+            $$(sel.radioButtons)[gender.he].click();
+            let result = $(sel.btnHe).isSelected();
+            expect(result).toEqual(true);
+        });
+
         it('TC-052 User can switch the option: "she" -> "it"', function () {
             $$(sel.radioButtons)[gender.she].click();
             $$(sel.radioButtons)[gender.it].click();
