@@ -28,7 +28,8 @@ const age = {
     "symbol": "@",
     "space": "    ",
     "letters": "abc",
-    "errorText": "Required"
+    "errorText": "Required",
+    "negative": "-5"
 }
 
 const story = {

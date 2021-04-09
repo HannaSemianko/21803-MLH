@@ -67,15 +67,15 @@ import exp from "../../data/expected.json";
         });
     });
 
-     describe('Negative cases', function () {
+        describe('Negative cases', function () {
 
-         before('Open App', function () {
-             browser.url('');
-         });
+            before('Open App', function () {
+                browser.url('');
+            });
 
-         beforeEach(function () {
-             browser.refresh();
-         });
+            beforeEach(function () {
+                browser.refresh();
+            });
 
          it('TC-065 Age input field doesn\'t accept \'0\' (Submit button isn\'t enable after fields 1 -4', function () {
              $(sel.name).setValue(name.default);
@@ -89,6 +89,12 @@ import exp from "../../data/expected.json";
 
          it('TC-066 When enter  \'13\' digits  error appears', function () {
              $(sel.age).setValue(age.digits13);
+             let result = $(sel.ageFieldErrorMessage).waitForDisplayed({timeout: 3000});
+             expect(result).toEqual(true);
+         });
+
+         it('TC-067 Age input field doesn\'t accept negative digits', function () {
+             $(sel.age).setValue(age.negative);
              let result = $(sel.ageFieldErrorMessage).waitForDisplayed({timeout: 3000});
              expect(result).toEqual(true);
          });
