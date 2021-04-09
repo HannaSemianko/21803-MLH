@@ -65,6 +65,21 @@ import exp from "../../data/expected.json";
             let result = $(sel.age).getValue();
             expect(result).toEqual(age.two);
         });
+
+        it('TC-063 If click 1 in Age input field 2  appears', function () {
+            $(sel.age).setValue(age.one);
+            $(sel.spinUPButton).click();
+            let result = $(sel.age).getValue();
+            expect(result).toEqual(age.two);
+        });
+
+        it('TC-064 If click "2"  and click spin down, digit "1" appears', function () {
+            $(sel.age).setValue(age.two);
+            $(sel.spinDownButton).click();
+            let result = $(sel.age).getValue();
+            expect(result).toEqual(age.one);
+        });
+
     });
 
         describe('Negative cases', function () {

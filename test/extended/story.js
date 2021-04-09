@@ -55,5 +55,12 @@ describe('Story field suite', function () {
             expect(result).toEqual('Tragedy');
         });
 
+        it('TC-081 The 7th type of story is Comedy', function () {
+            $(sel.storyType).click();
+            $$(sel.storyList)[story.comedy].click();
+            let result = $(sel.storyType).getText();
+            expect(result).toEqual('Comedy');
+        });
+
     });
 });
