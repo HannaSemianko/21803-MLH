@@ -30,7 +30,11 @@ const age = {
     "space": "    ",
     "letters": "abc",
     "errorText": "Required",
-    "negative": "-5"
+    "negative": "-5",
+    "letterE": "E",
+    "eLetter": "e",
+    "plus": "+",
+    "minus": "-"
 }
 
 const story = {

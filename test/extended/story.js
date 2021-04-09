@@ -77,5 +77,16 @@ describe('Story field suite', function () {
             expect(nameOfStory).toEqual(story.lastStory);
         });
 
+        it('TC-085 User can change the type of the story', function () {
+            $(sel.storyType).click();
+            $$(sel.storyList)[story.comedy].click();
+            $(sel.storyType).click();
+            $$(sel.storyList)[story.tragedy].click();
+            let nameOfStory = $(sel.storyTypeSelected).getText();
+            expect(nameOfStory).toEqual('Tragedy');
+        });
+
+
     });
 });
+
