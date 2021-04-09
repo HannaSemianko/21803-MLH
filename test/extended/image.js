@@ -39,6 +39,21 @@ describe('Image', function () {
         browser.pause(5000);
     });
 
+    it('TC-093 User can choose a file on the computer - jpeg (size < 0. 2Mb)', function () {
+        $(sel.name).setValue(name.default);
+        $$(sel.radioButtons)[gender.she].click();
+        $(sel.age).setValue(age.default);
+        $(sel.storyType).click();
+        $$(sel.storyList)[story.comedy].click();
+        const filePath = path.join(__dirname, '../../data/image/jpg125KB.jpg');
+        const inputUpload = $('.ant-upload input');
+        makeElVisible(inputUpload);
+        inputUpload.waitForDisplayed();
+        inputUpload.setValue(filePath);
+        const createBtn = $(sel.submitButton);
+        createBtn.click();
+    });
+
     it('TC -095 User can choose a file on the computer - png  (size < 0. 2Mb)', function () {
         $(sel.name).setValue(name.default);
         $$(sel.radioButtons)[gender.he].click();
