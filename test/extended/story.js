@@ -48,6 +48,14 @@ describe('Story field suite', function () {
             expect(result).toEqual('Journey and Return');
         });
 
+        it('TC-079 The 5 type of story is Rags and Riches', function () {
+            $(sel.storyType).click();
+            $$(sel.storyList)[story.ragsAndRiches].click();
+            let result = $(sel.storyType).getText();
+            expect(result).toEqual('Rags and Riches');
+        });
+
+
         it('TC-080 The 6th type of story is Tragedy', function () {
             $(sel.storyType).click();
             $$(sel.storyList)[story.tragedy].click();
@@ -60,6 +68,13 @@ describe('Story field suite', function () {
             $$(sel.storyList)[story.comedy].click();
             let result = $(sel.storyType).getText();
             expect(result).toEqual('Comedy');
+        });
+
+        it('TC-082 The chosen value fills the placeholder in', function () {
+            $(sel.storyType).click();
+            $$(sel.storyList)[story.comedy].click();
+            let nameOfStory = $(sel.storyTypeSelected).getText();
+            expect(nameOfStory).toEqual(story.lastStory);
         });
 
     });

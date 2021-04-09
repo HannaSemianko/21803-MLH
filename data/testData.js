@@ -40,7 +40,8 @@ const story = {
     "journeyAndReturn": 3,
     "ragsAndRiches": 4,
     "tragedy": 5,
-    "comedy": 6
+    "comedy": 6,
+    "lastStory": "Comedy"
 }
 
 module.exports = {name, age, gender, story};
