@@ -34,18 +34,18 @@ describe('Story field suite', function () {
             expect(result).toEqual('Rebirth');
         });
 
-        it('TC-077 The second type of story is Rebirth', function () {
-            $(sel.storyType).click();
-            $$(sel.storyList)[story.rebirth].click();
-            let result = $(sel.storyType).getText();
-            expect(result).toEqual('Rebirth');
-        });
-
-        it('TC-078 The third type of story is Quest', function () {
+        it('TC-077 The third type of story is Quest', function () {
             $(sel.storyType).click();
             $$(sel.storyList)[story.quest].click();
             let result = $(sel.storyType).getText();
             expect(result).toEqual('Quest');
+        });
+
+        it('TC-078 The fourth type of story is Journey and Return', function () {
+            $(sel.storyType).click();
+            $$(sel.storyList)[story.journeyAndReturn].click();
+            let result = $(sel.storyType).getText();
+            expect(result).toEqual('Journey and Return');
         });
 
         it('TC-080 The 6th type of story is Tragedy', function () {
