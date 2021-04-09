@@ -120,6 +120,16 @@ import exp from "../../data/expected.json";
              expect(error).toEqual(true);
          });
 
+            it('TC-069 Age input field does not accept  letters "E","e" and symbols "+","-" ', function () {
+                $(sel.age).setValue(age.letterE);
+                $(sel.age).setValue(age.eLetter);
+                $(sel.age).setValue(age.minus);
+                $(sel.age).setValue(age.plus);
+                let error = $(sel.ageFieldErrorMessage).waitForDisplayed(2000);
+                expect(error).toEqual(true);
+            });
+
+
          it('TC-071 Age input field doesn\'t accept symbols', function () {
              $(sel.age).setValue(age.symbol);
              let result = $(sel.age).getValue();
