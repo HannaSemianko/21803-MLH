@@ -65,6 +65,21 @@ import exp from "../../data/expected.json";
             let result = $(sel.age).getValue();
             expect(result).toEqual(age.two);
         });
+
+        it('TC-063 If click 1 in Age input field 2  appears', function () {
+            $(sel.age).setValue(age.one);
+            $(sel.spinUPButton).click();
+            let result = $(sel.age).getValue();
+            expect(result).toEqual(age.two);
+        });
+
+        it('TC-064 If click "2"  and click spin down, digit "1" appears', function () {
+            $(sel.age).setValue(age.two);
+            $(sel.spinDownButton).click();
+            let result = $(sel.age).getValue();
+            expect(result).toEqual(age.one);
+        });
+
     });
 
         describe('Negative cases', function () {
@@ -111,7 +126,14 @@ import exp from "../../data/expected.json";
              expect(result).toEqual("");
          });
 
-         it('TC-073 If enter 12 digits "999999999999" and click spin up, error appears ', function () {
+            it('TC-072 If click spin down when Age input field is empty, error appears', function () {
+                $(sel.spinDownButton).click();
+                browser.pause(3000);
+                let message = $(sel.ageFieldErrorMessage).waitForDisplayed(2000);
+                expect(message).toEqual(true);
+            });
+
+         it('TC-073 If enter 12 digits "999999999999" and click spin up, error appears', function () {
              $(sel.age).setValue(age.digits12);
              browser.pause(3000);
              $(sel.spinUPButton).click();

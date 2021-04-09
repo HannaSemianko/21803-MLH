@@ -9,6 +9,7 @@ const name = {
     "moreMaxSymbol": "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwq",
     "specialSymbol": "1(){}[]|`¬¦! \"£$%^&*\"<>:;#~_-+=,@",
     "cyrillicSymbols": "ЯЧСМИТЬБЮфывапролджэёЙЦУКЕНГШЩЗХъ",
+    "onlySpaces": "   "
 }
 
 const gender = {
