@@ -83,6 +83,12 @@ import exp from "../../data/expected.json";
                 expect(result).toEqual(true);
             });
 
+            it('TC-067 Age input field doesn\'t accept negative digits', function () {
+                $(sel.age).setValue(age.negative);
+                let result = $(sel.ageFieldErrorMessage).waitForDisplayed({timeout: 3000});
+                expect(result).toEqual(true);
+            });
+
             it('TC-071 Age input field doesn\'t accept symbols', function () {
                 $(sel.age).setValue(age.symbol);
                 let result = $(sel.age).getValue();
