@@ -24,8 +24,10 @@ const age = {
     "digits13": "1234567890123",
     "one": "1",
     "two": "2",
+    "zero": "0",
     "symbol": "@",
     "space": "    ",
+    "letters": "abc",
     "errorText": "Required"
 }
 

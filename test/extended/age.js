@@ -64,30 +64,55 @@ import exp from "../../data/expected.json";
             $(sel.spinUPButton).click();
             let result = $(sel.age).getValue();
             expect(result).toEqual(age.two);
-
-        });
-
-        describe('Negative cases', function () {
-
-            before('Open App', function () {
-                browser.url('');
-            });
-
-            beforeEach(function () {
-                browser.refresh();
-            });
-
-            it('TC-066 When enter  \'13\' digits  error appears', function () {
-                $(sel.age).setValue(age.digits13);
-                let result = $(sel.ageFieldErrorMessage).waitForDisplayed({timeout: 3000});
-                expect(result).toEqual(true);
-            });
-
-            it('TC-071 Age input field doesn\'t accept symbols', function () {
-                $(sel.age).setValue(age.symbol);
-                let result = $(sel.age).getValue();
-                expect(result).toEqual("");
-            });
         });
     });
+
+     describe('Negative cases', function () {
+
+         before('Open App', function () {
+             browser.url('');
+         });
+
+         beforeEach(function () {
+             browser.refresh();
+         });
+
+         it('TC-065 Age input field doesn\'t accept \'0\' (Submit button isn\'t enable after fields 1 -4', function () {
+             $(sel.name).setValue(name.default);
+             $$(sel.radioButtons)[gender.she].click();
+             $(sel.age).setValue(age.zero);
+             $(sel.storyType).click();
+             $$(sel.storyList)[story.comedy].click();
+             let submitButton = $(sel.submitButton).isEnabled();
+             expect(submitButton).toEqual(false);
+         });
+
+         it('TC-066 When enter  \'13\' digits  error appears', function () {
+             $(sel.age).setValue(age.digits13);
+             let result = $(sel.ageFieldErrorMessage).waitForDisplayed({timeout: 3000});
+             expect(result).toEqual(true);
+         });
+
+         it('TC-068 Age doesn\'t accept letters', function () {
+             $(sel.age).setValue(age.letters);
+             let error = $(sel.ageFieldErrorMessage).waitForDisplayed(2000);
+             expect(error).toEqual(true);
+         });
+
+         it('TC-071 Age input field doesn\'t accept symbols', function () {
+             $(sel.age).setValue(age.symbol);
+             let result = $(sel.age).getValue();
+             expect(result).toEqual("");
+         });
+
+         it('TC-073 If enter 12 digits "999999999999" and click spin up, error appears ', function () {
+             $(sel.age).setValue(age.digits12);
+             browser.pause(3000);
+             $(sel.spinUPButton).click();
+             browser.pause(3000);
+             let message = $(sel.ageFieldErrorMessage).waitForDisplayed(2000);
+             expect(message).toEqual(true);
+         });
+
+     });
  });
