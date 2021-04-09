@@ -33,5 +33,13 @@ describe('Story field suite', function () {
             let result = $(sel.storyType).getText();
             expect(result).toEqual('Rebirth');
         });
+
+        it('TC-078 The fourth type of story is Journey and Return', function () {
+            $(sel.storyType).click();
+            $$(sel.storyList)[story.journeyAndReturn].click();
+            let result = $(sel.storyType).getText();
+            expect(result).toEqual('Journey and Return');
+        });
+
     });
 });
