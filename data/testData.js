@@ -48,4 +48,10 @@ const story = {
     "lastStory": "Comedy"
 }
 
-module.exports = {name, age, gender, story};
+
+const image = {
+    "imagePlaceholder": "Click or drag and drop",
+}
+
+
+module.exports = {name, age, gender, story,image};
