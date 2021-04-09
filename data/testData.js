@@ -26,7 +26,8 @@ const age = {
     "two": "2",
     "symbol": "@",
     "space": "    ",
-    "errorText": "Required"
+    "errorText": "Required",
+    "negative": "-5"
 }
 
 const story = {
