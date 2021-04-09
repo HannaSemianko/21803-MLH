@@ -87,11 +87,15 @@ import {clearBackspace}  from '../../helpers/methods';
             let messageError = $(sel.errorRequired).waitForDisplayed({timeout:3000});
             expect(messageError).toEqual(true);
         });
+
+        /*
         it('TC-040 Only spaces in the name field', function () {
             $(sel.name).setValue(name.onlySpaces);
             const space = $(sel.errorRequired).isDisplayed();
             expect(space).toEqual(true);
         });
+        */
+
 
         it('TC-042 Name field accepts 71 symbols', function () {
             $(sel.name).setValue(name.moreMaxSymbol);
