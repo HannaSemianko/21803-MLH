@@ -126,7 +126,14 @@ import exp from "../../data/expected.json";
              expect(result).toEqual("");
          });
 
-         it('TC-073 If enter 12 digits "999999999999" and click spin up, error appears ', function () {
+            it('TC-072 If click spin down when Age input field is empty, error appears', function () {
+                $(sel.spinDownButton).click();
+                browser.pause(3000);
+                let message = $(sel.ageFieldErrorMessage).waitForDisplayed(2000);
+                expect(message).toEqual(true);
+            });
+
+         it('TC-073 If enter 12 digits "999999999999" and click spin up, error appears', function () {
              $(sel.age).setValue(age.digits12);
              browser.pause(3000);
              $(sel.spinUPButton).click();
