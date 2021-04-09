@@ -15,7 +15,8 @@ const name = {
 const gender = {
     "he": 0,
     "she": 1,
-    "it": 2
+    "it": 2,
+    "He": "He"
 }
 
 const age = {

@@ -21,7 +21,8 @@ const elements = {
     "errorRequired": '//div[contains(@class, "ant-form-item-control")][. //input[@id="name"]]//div[@role="alert"]',
     "ageFieldErrorMessage": "//div[contains(@class, \"ant-form-item-with-help\")][.//input[@id=\"age\"]]//div[@role=\"alert\"]",
     "spinUPButton": ".anticon-up",
-    "spinDownButton": ".anticon-down"
+    "spinDownButton": ".anticon-down",
+    "subtitleIncludesName": ".mb-4"
 }
 
 module.exports = elements;
