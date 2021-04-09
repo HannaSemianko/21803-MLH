@@ -1,5 +1,5 @@
 import sel from '../../data/selectors';
-import {name, gender, age, story} from '../../data/testData';
+import {name, gender, age, story, image} from '../../data/testData';
 const path = require('path');
 
 describe('Image', function () {
@@ -10,6 +10,11 @@ describe('Image', function () {
 
     beforeEach(() => {
         browser.refresh();
+    });
+
+    it('Placeholder  = "Click or drag and drop"', function () {
+        let boxPlaceholder = $(sel.imageBoxPlaceholder).getText();
+        expect(boxPlaceholder).toEqual(image.imagePlaceholder)
     });
 
     // SHOW ELEMENT
@@ -33,4 +38,21 @@ describe('Image', function () {
         createBtn.click();
         browser.pause(5000);
     });
+
+    it('TC -095 User can choose a file on the computer - png  (size < 0. 2Mb)', function () {
+        $(sel.name).setValue(name.default);
+        $$(sel.radioButtons)[gender.he].click();
+        $(sel.age).setValue(age.default);
+        $(sel.storyType).click();
+        $$(sel.storyList)[story.tragedy].click();
+        const filePath = path.join(__dirname, '../../data/image/png152KB.png');
+        const inputUpload = $('.ant-upload input');
+        makeElVisible(inputUpload);
+        inputUpload.waitForDisplayed();
+        inputUpload.setValue(filePath);
+        const createBtn = $(sel.submitButton);
+        createBtn.click();
+        browser.pause(5000);
+    });
+
 });
