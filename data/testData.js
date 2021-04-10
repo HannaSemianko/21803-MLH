@@ -19,7 +19,8 @@ const gender = {
     "He": "He",
     "It": "It",
     "its": "its",
-    "She": "She"
+    "She": "She",
+    "his": "his"
 }
 
 const age = {
