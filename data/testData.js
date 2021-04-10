@@ -16,7 +16,10 @@ const gender = {
     "he": 0,
     "she": 1,
     "it": 2,
-    "He": "He"
+    "He": "He",
+    "It": "It",
+    "its": "its",
+    "She": "She"
 }
 
 const age = {
@@ -54,5 +57,13 @@ const image = {
     "imagePlaceholder": "Click or drag and drop",
 }
 
+const testCase129 = {
+    "name": name.default,
+    "genderClick": gender.it,
+    "genderTextLower": gender.It,
+    "genderPossessive": gender.its,
+    "age": age.digits12,
+    "story": story.comedy
+}
 
-module.exports = {name, age, gender, story,image};
+module.exports = {name, age, gender, story,image, testCase129};
