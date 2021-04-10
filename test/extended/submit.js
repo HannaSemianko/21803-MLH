@@ -9,7 +9,10 @@ import {
     getAgeStory,
     getYears,
     countGenderLower,
-    countPosGender
+    countPosGender,
+    firstElGender,
+    secondElGender,
+    thirdElGender
 } from '../../helpers/methods';
 
 describe('Submit button suite', function () {
@@ -26,27 +29,27 @@ describe('Submit button suite', function () {
         inputValues4Submit(name.default, gender.he, age.one, story.comedy);
         browser.pause(3000);
 
-        let text = $$(".card-text")[0].getText();
-        let arrIncludesString = text.split("\n");
-        let arrString1 = arrIncludesString[1].split(",");
-        console.log(arrString1);
-        let header = $("h4").getText();
-        expect(header).toEqual(`Two Cats And A ${name.default}`)
-        expect(arrString1[0]).toEqual(name.default);
+        let header = getTitle();
+        expect(header).toEqual(`Two Cats And A ${name.default}`);
 
-        let arrStringOneElOne = arrString1[1].split(" ");
-        expect(arrStringOneElOne[3]).toEqual(age.one);
-        //expect(arrStringOneElOne[4]).toEqual("year");//Bug!!!
+        let nameInStory = getNameStory();
+        expect(nameInStory).toEqual(name.default);
 
-        let arrSplitSentence = text.split(".");
-        console.log(arrSplitSentence);
-        let firstElGender = arrSplitSentence[3].trim().split(" ");
-        let secondElGender = arrSplitSentence[4].split(" ");
-        expect(firstElGender[0]).toEqual("He");
-        expect(secondElGender[0].slice(1)).toEqual("He");
+        let ageInStory = getAgeStory();
+        expect(ageInStory).toEqual(age.one);
 
-        let thirdElGender = arrSplitSentence[2].split(" ").slice(-6);
-        expect(thirdElGender[0]).toEqual("his");
+        // let yearsInStory = getYears();
+        // expect(yearsInStory).toEqual(age.one > 1 ? "years" : "year"); //Bug!!!
+
+        let firstGender = firstElGender();
+        expect(firstGender).toEqual(gender.He);
+
+        let secondGender = secondElGender();
+        expect(secondGender).toEqual(gender.He);
+
+        let thirdGender = thirdElGender();
+        expect(thirdGender).toEqual(gender.his);
+
     });
 
     describe('TC-129 name (LadyBug007) + age (999999999999) + It + story "Comedy"', function () {
