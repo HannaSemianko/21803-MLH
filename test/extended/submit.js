@@ -17,6 +17,26 @@ describe('Submit button suite', function () {
             inputValues4Submit(name.default, gender.he, age.one, story.comedy);
             browser.pause(3000);
 
+            it('TC-124.1 Check name in Title', function () {
+                let header = getTitle();
+                expect(header).toEqual(`Two Cats And A ${name.default}`)
+            });
+
+            it('TC-124.2 Check name in Story', function () {
+                let result = getNameStory();
+                expect(result).toEqual(name.default);
+            });
+
+            it('TC-124.3 Check age in Story', function () {
+                let result = getAgeStory();
+                expect(result).toEqual(age.one);
+            });
+
+            // it('TC-124.4 Check "year" / "years"', function () {
+            //     let result = getYears();
+            //     expect(result).toEqual(age.one > 1 ? "years": "year");
+            // });
+
             let text = $$(".card-text")[0].getText();
             let arrIncludesString = text.split("\n");
             let arrString1 = arrIncludesString[1].split(",");
@@ -40,7 +60,7 @@ describe('Submit button suite', function () {
             expect(thirdElGender[0]).toEqual("his");
         });
 
-    describe('TC-129 name (LadyBug007) + age (999999999999) + It + story "Comedy"', function () {
+    describe.only('TC-129 name (LadyBug007) + age (999999999999) + It + story "Comedy"', function () {
 
         before('Open App', function () {
             browser.url('');
