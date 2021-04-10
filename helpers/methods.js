@@ -1,7 +1,6 @@
 import sel from "../data/selectors";
 
-
-function inputValues4(name, gender, age, story){
+function inputValues4(name, gender, age, story) {
     $(sel.name).setValue(name);
     $$(sel.radioButtons)[gender].click();
     $(sel.age).setValue(age);
@@ -9,7 +8,7 @@ function inputValues4(name, gender, age, story){
     $$(sel.storyList)[story].click();
 }
 
-function inputValues4Submit(name, gender, age, story){
+function inputValues4Submit(name, gender, age, story) {
     $(sel.name).setValue(name);
     $$(sel.radioButtons)[gender].click();
     $(sel.age).setValue(age);
@@ -18,57 +17,70 @@ function inputValues4Submit(name, gender, age, story){
     $(sel.submitButton).click();
 }
 
-function clearBackspace (value){
+function clearBackspace(value) {
     for (let i = 0; i < value; i++) {
         $(sel.name).keys(['Backspace']);
     }
 }
 
-function getTitle (){
+function getTitle() {
     return $("h4").getText();
 }
-function textStory () {
+
+function textStory() {
     return $$(".card-text")[0].getText();
 }
 
-function breakStoryIntoLines (){
+function breakStoryIntoLines() {
     let text = textStory();
     let arrIncludesLines = text.split("\n");
     console.log(arrIncludesLines)
     return arrIncludesLines;
 }
 
-function getNameStory (){
+function getNameStory() {
     let arrWordsOfLines1 = breakStoryIntoLines()[1].split(",");
     return arrWordsOfLines1[0];
 }
 
-function getAgeStory () {
+function getAgeStory() {
     let arrWordsOfLines1 = breakStoryIntoLines()[1].split(" ");
     return arrWordsOfLines1[3];
 }
 
-function getYears () {
+function getYears() {
     let arrWordsOfLines1 = breakStoryIntoLines()[1].split(" ");
     return arrWordsOfLines1[4];
 }
 
-function textWithoutLineBreak () {
+function textWithoutLineBreak() {
     let arrWords = textStory().replace(/\n/g, ' ').split(' ');
     console.log(arrWords);
     return arrWords;
 }
 
-function countGenderLower (genderTC) {
+function countGenderLower(genderTC) {
     let arrWords = textWithoutLineBreak();
     return arrWords.filter(el => el === genderTC).length;
 }
 
-function countPosGender (genderPosTC) {
+function countPosGender(genderPosTC) {
     let arrWords = textWithoutLineBreak();
     return arrWords.filter(el => el === genderPosTC).length;
 }
 
+module.exports = {
+    inputValues4,
+    clearBackspace,
+    inputValues4Submit,
+    getTitle,
+    textStory,
+    getNameStory,
+    getAgeStory,
+    getYears,
+    countGenderLower,
+    countPosGender
+};
 function textBreakInToSentence(){
     let text = textStory();
     let arrIncludesSentence = text.split(".");

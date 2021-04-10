@@ -18,14 +18,14 @@ import {
 describe('Submit button suite', function () {
 
     before('Open App', function () {
-            browser.url('');
-        });
+        browser.url('');
+    });
 
-        beforeEach(function () {
-            browser.refresh();
-        });
+    beforeEach(function () {
+        browser.refresh();
+    });
 
-    it.only('TC-124 name + age (1) + HE + story comedy', function () {
+    it('TC-124 name + age (1) + HE + story comedy', function () {
         inputValues4Submit(name.default, gender.he, age.one, story.comedy);
         browser.pause(3000);
 

@@ -2,14 +2,15 @@ const name = {
     "default": "LadyBug007",
     "digits": "1234567890",
     "anyLetters": "ABCabc",
-    "letters":"zaqwsxcderfvbgtyhnmjukilop",
+    "letters": "zaqwsxcderfvbgtyhnmjukilop",
     "oneSymbol": "a",
     "nameWithSpaces": 'abc abc"/ "  abc abc"/ "abc abc  ',
     "maxSymbol": "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
     "moreMaxSymbol": "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwq",
     "specialSymbol": "1(){}[]|`¬¦! \"£$%^&*\"<>:;#~_-+=,@",
     "cyrillicSymbols": "ЯЧСМИТЬБЮфывапролджэёЙЦУКЕНГШЩЗХъ",
-    "onlySpaces": "   "
+    "onlySpaces": "   ",
+    "nameTC_126": "Tree"
 }
 
 const gender = {
@@ -19,8 +20,9 @@ const gender = {
     "He": "He",
     "It": "It",
     "its": "its",
-    "She": "She",
-    "his": "his"
+    "her": "her",
+    "his": "his",
+    "She": "She"
 }
 
 const age = {
@@ -67,4 +69,4 @@ const testCase129 = {
     "story": story.comedy
 }
 
-module.exports = {name, age, gender, story,image, testCase129};
+module.exports = {name, age, gender, story, image, testCase129};
