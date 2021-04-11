@@ -1,6 +1,7 @@
 import sel from "../../data/selectors";
 import {name, age, gender, story} from "../../data/testData";
 import exp from "../../data/expected.json";
+import {inputValues4} from "../../helpers/methods";
 
  describe('Age field suite', function () {
 
@@ -37,11 +38,11 @@ import exp from "../../data/expected.json";
             expect(result).toEqual(exp.digitsFrom0To9);
         });
 
-        // it('TC-060 Age input field trimmed "0" on the left of the number', function () {
-        //     $(sel.age).setValue(age.numberWith0);
-        //     let result = $(sel.age).getValue();
-        //     expect(result).toEqual(exp.numberWithout0);
-        // });
+        it('TC-060 Age input field trimmed "0" on the left of the number', function () {
+           inputValues4(name.default, gender.he, age.numberWith0, story.comedy)
+            let result = $(sel.age).getValue();
+            expect(result).toEqual(exp.numberWithout0);
+        });
 
         it('TC-061 Age input field does not accept space', function () {
             $(sel.age).setValue(age.space);

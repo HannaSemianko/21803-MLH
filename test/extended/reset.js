@@ -31,9 +31,3 @@ describe('Reset button suite', function () {
 
     });
 });
-
-
-
-
-
-
