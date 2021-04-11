@@ -2,7 +2,8 @@ import sel from '../../data/selectors';
 import {name, gender, age, story, image} from '../../data/testData';
 import {
     inputValues4,
-    makeElVisible
+    makeElVisible,
+    uploadImageNegative
 } from '../../helpers/methods';
 
 const path = require('path');
@@ -104,37 +105,19 @@ describe('Image suite', function () {
 
         it('TC - 119 Upload image - User can choose a file on the computer - gif < 1Mb', function () {
             inputValues4(name.default, gender.she, age.default, story.comedy);
-            const filePath = path.join(__dirname, '../../data/image/gif_845KB.gif');
-            makeElVisible($(sel.inputUpload));
-            $(sel.inputUpload).waitForDisplayed();
-            $(sel.inputUpload).setValue(filePath);
-            let element = $(sel.imageError);
-            element.waitForDisplayed();
-            let message = element.isDisplayed();
+            let message = uploadImageNegative(image.gif);
             expect(message).toEqual(true);
         });
 
         it('TC - 120 Upload image - User can choose a file on the computer - mp4 < 1Mb', function () {
             inputValues4(name.default, gender.she, age.default, story.comedy);
-            const filePath = path.join(__dirname, '../../data/image/mp4_180KB.mp4');
-            makeElVisible($(sel.inputUpload));
-            $(sel.inputUpload).waitForDisplayed();
-            $(sel.inputUpload).setValue(filePath);
-            let element = $(sel.imageError);
-            element.waitForDisplayed();
-            let message = element.isDisplayed();
+            let message = uploadImageNegative(image.mp4);
             expect(message).toEqual(true);
         });
 
         it('TC -121 Upload image - User can choose a file on the computer - tiff 1.1Mb', function () {
             inputValues4(name.default, gender.she, age.default, story.comedy);
-            const filePath = path.join(__dirname, '../../data/image/tiff_1MB.tiff');
-            makeElVisible($(sel.inputUpload));
-            $(sel.inputUpload).waitForDisplayed();
-            $(sel.inputUpload).setValue(filePath);
-            let element = $(sel.imageError);
-            element.waitForDisplayed();
-            let message = element.isDisplayed();
+            let message = uploadImageNegative(image.tiff);
             expect(message).toEqual(true);
         });
     });

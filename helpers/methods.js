@@ -1,4 +1,6 @@
 import sel from "../data/selectors";
+import {name, gender, age, story, image} from '../data/testData';
+const path = require('path');
 
 function inputValues4(name, gender, age, story) {
     $(sel.name).setValue(name);
@@ -115,6 +117,21 @@ function checkHeader () {
     return $(sel.header).getText();
 }
 
+function uploadImagePositive () {
+
+}
+
+function uploadImageNegative (image) {
+
+    const filePath = path.join(__dirname, image);
+    makeElVisible($(sel.inputUpload));
+    $(sel.inputUpload).waitForDisplayed();
+    $(sel.inputUpload).setValue(filePath);
+    let element = $(sel.imageError);
+    element.waitForDisplayed();
+    return element.isDisplayed();
+}
+
 module.exports = {
     inputValues4,
     clearBackspace,
@@ -130,5 +147,6 @@ module.exports = {
     firstElGender,
     secondElGender,
     thirdElGender,
-    checkHeader
+    checkHeader,
+    uploadImageNegative
 };
