@@ -26,7 +26,7 @@ exports.config = {
         //  './test/extended/image.js',
         // // './test/extended/gender.js',
         // './test/extended/submit.js',
-        // './test/extended/reset.js',
+         //'./test/extended/reset.js',
     ],
     // Patterns to exclude.
     exclude: [
