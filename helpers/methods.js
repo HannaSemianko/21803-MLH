@@ -69,6 +69,35 @@ function countPosGender(genderPosTC) {
     return arrWords.filter(el => el === genderPosTC).length;
 }
 
+function textBreakInToSentence(){
+    let text = textStory();
+    let arrIncludesSentence = text.split(".");
+    console.log(arrIncludesSentence)
+    return arrIncludesSentence;
+}
+
+function firstElGender(){
+   let arrIncludesSentence =  textBreakInToSentence();
+   let firstElGender = arrIncludesSentence[3].trim().split(" ");
+   return firstElGender[0];
+}
+
+function secondElGender(){
+    let arrIncludesSentence =  textBreakInToSentence();
+    let secondElGender = arrIncludesSentence[4].split(" ");
+    return secondElGender[0].slice(1);
+}
+
+function thirdElGender (){
+    let arrIncludesSentence =  textBreakInToSentence();
+    let thirdGender = arrIncludesSentence[2].split(" ").slice(-6);
+    return thirdGender[0];
+}
+
+function checkHeader () {
+    return $(sel.header).getText();
+}
+
 module.exports = {
     inputValues4,
     clearBackspace,
@@ -79,34 +108,9 @@ module.exports = {
     getAgeStory,
     getYears,
     countGenderLower,
-    countPosGender
+    countPosGender,
+    firstElGender,
+    secondElGender,
+    thirdElGender,
+    checkHeader
 };
-function textBreakInToSentence(){
-    let text = textStory();
-    let arrIncludesSentence = text.split(".");
-    console.log(arrIncludesSentence)
-    return arrIncludesSentence;
-};
-
-function firstElGender(){
-   let arrIncludesSentence =  textBreakInToSentence();
-   let firstElGender = arrIncludesSentence[3].trim().split(" ");
-   return firstElGender[0];
-};
-
-function secondElGender(){
-    let arrIncludesSentence =  textBreakInToSentence();
-    let secondElGender = arrIncludesSentence[4].split(" ");
-    return secondElGender[0].slice(1);
-};
-
-function thirdElGender (){
-    let arrIncludesSentence =  textBreakInToSentence();
-    let thirdGender = arrIncludesSentence[2].split(" ").slice(-6);
-    return thirdGender[0];
-};
-
-
-
-
-module.exports = {inputValues4, clearBackspace,inputValues4Submit, getTitle, textStory, getNameStory, getAgeStory, getYears, countGenderLower, countPosGender,firstElGender, secondElGender, thirdElGender};

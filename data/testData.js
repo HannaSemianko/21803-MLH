@@ -10,7 +10,10 @@ const name = {
     "specialSymbol": "1(){}[]|`¬¦! \"£$%^&*\"<>:;#~_-+=,@",
     "cyrillicSymbols": "ЯЧСМИТЬБЮфывапролджэёЙЦУКЕНГШЩЗХъ",
     "onlySpaces": "   ",
-    "nameTC_126": "Tree"
+    "nameTC_125": "LadyBoss",
+    "nameTC_126": "Tree",
+    "nameTC_127": "BigBoss",
+    "nameTC_128": "MissMarple"
 }
 
 const gender = {
@@ -33,6 +36,7 @@ const age = {
     "one": "1",
     "two": "2",
     "zero": "0",
+    "hundred": "100",
     "symbol": "@",
     "space": "    ",
     "letters": "abc",
@@ -54,7 +58,6 @@ const story = {
     "comedy": 6,
     "lastStory": "Comedy"
 }
-
 
 const image = {
     "imagePlaceholder": "Click or drag and drop",
