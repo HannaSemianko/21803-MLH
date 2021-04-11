@@ -20,10 +20,10 @@ describe('Image suite', function () {
             browser.refresh();
         });
 
-        it('Placeholder  = "Click or drag and drop"', function () {
-            let boxPlaceholder = $(sel.imageBoxPlaceholder).getText();
-            expect(boxPlaceholder).toEqual(image.imagePlaceholder)
-        });
+    it('Placeholder  = "Click or drag and drop"', function () {
+        let boxPlaceholder = $(sel.imageBoxPlaceholder).getText();
+        expect(boxPlaceholder).toEqual(image.imagePlaceholder)
+    });
 
         it('TC -089 Upload image - User can choose a file on the computer - jpg 2.5Mb', function () {
             inputValues4(name.default, gender.she, age.default, story.comedy);
@@ -101,6 +101,16 @@ describe('Image suite', function () {
 
         beforeEach(() => {
             browser.refresh();
+        });
+
+        it("TC - 118 User can't upload file in pdf format", function () {
+            const filePath = path.join(__dirname, '../../data/image/sample147kb.pdf');
+            const inputUpload = $('.ant-upload input');
+            makeElVisible(inputUpload);
+            inputUpload.waitForDisplayed();
+            inputUpload.setValue(filePath);
+            const err = $(sel.imageError).isEnabled();
+            expect(err).toEqual(true);
         });
 
         it('TC - 119 Upload image - User can choose a file on the computer - gif < 1Mb', function () {
