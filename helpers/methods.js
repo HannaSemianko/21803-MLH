@@ -17,6 +17,23 @@ function inputValues4Submit(name, gender, age, story) {
     $(sel.submitButton).click();
 }
 
+function inputValues5Submit(name, gender, age, story, image) {
+    $(sel.name).setValue(name);
+    $$(sel.radioButtons)[gender].click();
+    $(sel.age).setValue(age);
+    $(sel.storyType).click();
+    $$(sel.storyList)[story].click();
+
+    $(sel.submitButton).click();
+}
+
+// SHOW ELEMENT
+function makeElVisible(element) {
+    browser.execute(function (el)  {
+        el.style.display = '';
+    }, element);
+}
+
 function clearBackspace(value) {
     for (let i = 0; i < value; i++) {
         $(sel.name).keys(['Backspace']);
@@ -102,6 +119,7 @@ module.exports = {
     inputValues4,
     clearBackspace,
     inputValues4Submit,
+    makeElVisible,
     getTitle,
     textStory,
     getNameStory,

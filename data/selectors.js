@@ -16,6 +16,8 @@ const elements = {
     "imageLabel": ".ant-form-item-label",
     "image": "span.ant-upload",
     "imageBoxPlaceholder": "span[role='button'] > div > div",
+    "inputUpload": ".ant-upload input",
+    "imageError": ".ant-message-notice",
     "submitButton": ".ant-btn",
     "tryAgainButton": ".btn-primary",
     "errorRequired": '//div[contains(@class, "ant-form-item-control")][. //input[@id="name"]]//div[@role="alert"]',
