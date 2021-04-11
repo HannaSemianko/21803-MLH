@@ -1,19 +1,7 @@
-import {name, age, gender, story, testCase129} from "../../data/testData";
+import {name, age, gender, story} from "../../data/testData";
 import sel from "../../data/selectors";
 import exp from "../../data/expected.json";
-import {
-    inputValues4Submit,
-    getTitle,
-    getNameStory,
-    getAgeStory,
-    getYears,
-    countGenderLower,
-    countPosGender,
-    firstElGender,
-    secondElGender,
-    thirdElGender,
-    checkHeader
-} from '../../helpers/methods';
+import {inputValues4Submit,} from '../../helpers/methods';
 
 describe('Reset button suite', function () {
 
@@ -21,7 +9,7 @@ describe('Reset button suite', function () {
         browser.url('');
     });
 
-    it('TC-132 When user click the button, the application shows the main page with clear fields', function () {
+    it.only('TC-132 When user click the button, the application shows the main page with clear fields', function () {
         inputValues4Submit(name.default, gender.he, age.one, story.comedy);
         $(sel.tryAgainButton).click();
         browser.pause(3000);
