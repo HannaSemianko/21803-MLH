@@ -20,10 +20,10 @@ exports.config = {
         // './test/smoke/*.js',
         // './test/extended/*.js',
         // './test/smoke/smokeFunctional.js',
-        //'./test/extended/story.js',
+        './test/extended/story.js',
         //'./test/extended/age.js'
         //   './test/extended/imageTest.js'
-         './test/extended/image.js'
+         //'./test/extended/image.js'
         // './test/extended/gender.js',
         //'./test/extended/submit.js',
     ],

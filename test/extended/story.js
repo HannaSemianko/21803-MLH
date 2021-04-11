@@ -86,6 +86,12 @@ describe('Story field suite', function () {
             expect(nameOfStory).toEqual('Tragedy');
         });
 
+        it.only('TC-083 After the value is choosen the dropdown is collapced', function () {
+            $(sel.storyType).click();
+            $$(sel.storyList)[story.comedy].click();
+            let nameOfStory = $$(sel.storyList)[story.overcomingTheMonster].isClickable();
+            expect(nameOfStory).toEqual(false);
+        });
 
     });
 });
