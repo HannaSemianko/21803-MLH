@@ -8,6 +8,11 @@ describe('Reset button suite', function () {
     before('Open App', function () {
         browser.url('');
     });
+
+    beforeEach('Refresh app', () => {
+        browser.refresh();
+    });
+
     it('TC-131 The button is always active', function () {
         inputValues4Submit(name.default, gender.he, age.one, story.comedy);
 
