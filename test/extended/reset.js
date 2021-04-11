@@ -8,8 +8,16 @@ describe('Reset button suite', function () {
     before('Open App', function () {
         browser.url('');
     });
+    it('TC-131 The button is always active', function () {
+        inputValues4Submit(name.default, gender.he, age.one, story.comedy);
 
-    it.only('TC-132 When user click the button, the application shows the main page with clear fields', function () {
+        let result = $(sel.tryAgainButton).isEnabled();
+        expect(result).toEqual(true);
+
+    });
+
+
+    it('TC-132 When user click the button, the application shows the main page with clear fields', function () {
         inputValues4Submit(name.default, gender.he, age.one, story.comedy);
         $(sel.tryAgainButton).click();
         browser.pause(3000);
