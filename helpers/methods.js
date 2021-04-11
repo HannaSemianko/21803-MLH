@@ -1,4 +1,6 @@
 import sel from "../data/selectors";
+import {name, gender, age, story, image} from '../data/testData';
+const path = require('path');
 
 function inputValues4(name, gender, age, story) {
     $(sel.name).setValue(name);
@@ -15,6 +17,23 @@ function inputValues4Submit(name, gender, age, story) {
     $(sel.storyType).click();
     $$(sel.storyList)[story].click();
     $(sel.submitButton).click();
+}
+
+function inputValues5Submit(name, gender, age, story, image) {
+    $(sel.name).setValue(name);
+    $$(sel.radioButtons)[gender].click();
+    $(sel.age).setValue(age);
+    $(sel.storyType).click();
+    $$(sel.storyList)[story].click();
+
+    $(sel.submitButton).click();
+}
+
+// SHOW ELEMENT
+function makeElVisible(element) {
+    browser.execute(function (el)  {
+        el.style.display = '';
+    }, element);
 }
 
 function clearBackspace(value) {
@@ -98,10 +117,26 @@ function checkHeader () {
     return $(sel.header).getText();
 }
 
+function uploadImagePositive () {
+
+}
+
+function uploadImageNegative (image) {
+
+    const filePath = path.join(__dirname, image);
+    makeElVisible($(sel.inputUpload));
+    $(sel.inputUpload).waitForDisplayed();
+    $(sel.inputUpload).setValue(filePath);
+    let element = $(sel.imageError);
+    element.waitForDisplayed();
+    return element.isDisplayed();
+}
+
 module.exports = {
     inputValues4,
     clearBackspace,
     inputValues4Submit,
+    makeElVisible,
     getTitle,
     textStory,
     getNameStory,
@@ -112,5 +147,6 @@ module.exports = {
     firstElGender,
     secondElGender,
     thirdElGender,
-    checkHeader
+    checkHeader,
+    uploadImageNegative
 };

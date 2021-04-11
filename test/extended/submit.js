@@ -1,4 +1,3 @@
-import sel from "../../data/selectors";
 import {name, age, gender, story, testCase129} from "../../data/testData";
 import exp from "../../data/expected.json";
 import {
@@ -262,7 +261,5 @@ describe('Submit button suite', function () {
             expect(countGender).toEqual(1);
         });
     });
-
-
 });
 
