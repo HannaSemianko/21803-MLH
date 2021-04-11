@@ -61,6 +61,9 @@ const story = {
 
 const image = {
     "imagePlaceholder": "Click or drag and drop",
+    "mp4" : '../data/image/mp4_180KB.mp4',
+    "tiff": '../data/image/tiff_1MB.tiff',
+    "gif": '../data/image/gif_845KB.gif'
 }
 
 const testCase129 = {
