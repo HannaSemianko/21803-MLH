@@ -2,15 +2,18 @@ import sel from '../../data/selectors';
 import {name, gender, age, story, image} from '../../data/testData';
 const path = require('path');
 
-describe('Image', function () {
 
-    before('Open App', function () {
-        browser.url('');
-    });
+    describe('Image field suite', function () {
 
-    beforeEach(() => {
-        browser.refresh();
-    });
+        describe('Positive cases', function () {
+
+            before('Open App', function () {
+                browser.url('');
+            });
+
+            beforeEach(function () {
+                browser.refresh();
+            });
 
     it('Placeholder  = "Click or drag and drop"', function () {
         let boxPlaceholder = $(sel.imageBoxPlaceholder).getText();
@@ -70,4 +73,29 @@ describe('Image', function () {
         browser.pause(5000);
     });
 
+
+            describe('Negative cases', function () {
+
+                before('Open App', function () {
+                    browser.url('');
+                });
+
+                beforeEach(function () {
+                    browser.refresh();
+                });
+
+                it.only("TC - 118 User can't upload file in pdf format", function () {
+                    const filePath = path.join(__dirname, '../../data/image/sample147kb.pdf');
+                    const inputUpload = $('.ant-upload input');
+                    makeElVisible(inputUpload);
+                    inputUpload.waitForDisplayed();
+                    inputUpload.setValue(filePath);
+                    const err = $(sel.imgErrorMessage).isEnabled();
+                    expect(err).toEqual(true);
+                    browser.pause(5000);
+                });
+
+            });
+    });
 });
+
