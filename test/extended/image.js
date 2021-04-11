@@ -109,9 +109,8 @@ describe('Image suite', function () {
             makeElVisible(inputUpload);
             inputUpload.waitForDisplayed();
             inputUpload.setValue(filePath);
-            const err = $(sel.imgErrorMessage).isEnabled();
+            const err = $(sel.imageError).isEnabled();
             expect(err).toEqual(true);
-            browser.pause(5000);
         });
 
         it('TC - 119 Upload image - User can choose a file on the computer - gif < 1Mb', function () {
